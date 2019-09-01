@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { fetchPosts } from './api/actions/actions'
+import { fetchPostsAndUser } from './api/actions/actions'
 import UserHeader from './UserHeader'
 
 class PostList extends Component {
 
     componentDidMount(){
-        this.props.fetchPosts()
+        this.props.fetchPostsAndUser()
     }
 
     renderList() {
@@ -41,7 +41,7 @@ const mapStateToProps = (state) => {
 }
 
 
-export default connect(mapStateToProps, { fetchPosts })(PostList)
+export default connect(mapStateToProps, { fetchPostsAndUser })(PostList)
 
 /*
 (selectedSong = null, action) => {}
